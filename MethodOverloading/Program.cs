@@ -9,11 +9,12 @@ namespace MethodOverloading
         {
             int add1 = Add(2, 3);
             double add2 = Add(4.3, 5.78);
-
+            string add3 = Add(2, 2, true);
             
             
             Console.WriteLine(add1);
             Console.WriteLine(add2);
+            Console.WriteLine(add3);
         }
 
         //Create method named Add, that accepts two int's and returns sum
@@ -36,15 +37,24 @@ namespace MethodOverloading
         //If the boolean parameter is equal to true, the Add method will return the sum of the 2 numbers plus the word “dollars” at the end of the string.
         //You must also account for the appropriate grammar of the string - so it can’t be “1 dollars”
 
-        //public static string Add(int w, int s, bool d)
-        //{
+        public static string Add(int w, int s, bool d)
+        {
             //need a if statement?, dollars and dollar(if sum is 1 <= dollar, if 1>= dollars?
 
-       //     if (d)
-       //     {
-
-       //     }
-       // }
+            if (d == true && (w + s) > 1)
+            {
+                return $"{w + s} dollars";
+            }
+            else if (d == true && (w + s) == 1)
+            {
+                return $"{w + s} dollar";
+            }
+            else
+            { 
+                return "Enter vaid number";
+            
+            }
+        }
 
        // Create a method named Add, that accepts two integers and returns the sum of those two integers
        // Now create an overload of the Add method to account for being able to add two decimals together
